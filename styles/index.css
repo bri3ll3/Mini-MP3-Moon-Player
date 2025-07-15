@@ -1,0 +1,174 @@
+/* Base styles and reset */
+body {
+    background: #12111b; /* Dark starry background */
+    color: #e0dcdc;
+    font-family: 'Press Start 2P', cursive, monospace; /* pixel-art style font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    user-select: none;
+    padding-top: 4rem;       /* add some space on top */
+    margin: 5px;    
+  }
+  
+  /* Load pixel font from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  /* Wrapper for player and playlist side by side */
+  #wrapper {
+    display: flex;
+    gap: 25px;
+  }
+  
+  /* The Player Box */
+  #player {
+    background: #222133;
+    border: 4px solid #6f42c1;
+    border-radius: 12px;
+    box-shadow:
+      inset 0 0 10px #7540e6,
+      6px 6px 0 #32174d;
+    padding: 1.5rem;
+    width: 320px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  /* Audio controls hidden, we make custom buttons */
+  #audioPlayer {
+    width: 100%;
+    outline: none;
+    display: none; /* hide default controls */
+  }
+  
+  /* Custom control buttons container */
+  #player > div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Buttons styled as pixel squares */
+  button {
+    background: linear-gradient(145deg, #6f42c1, #4b268a);
+    border: 3px solid #32174d;
+    box-shadow: 3px 3px 0 #2a126e;
+    color: #f7f1e3;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    padding: 0.7rem 1.2rem;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(145deg, #7a51d7, #5832a8);
+    box-shadow: 4px 4px 0 #3b1d8d;
+  }
+  
+  /* Now Playing text */
+  #player p {
+    font-size: 0.8rem;
+    color: #b2a9d6;
+    text-align: center;
+    user-select: text;
+    margin: 0;
+  }
+  
+  /* Song title */
+  #songTitle {
+    color: #d8b8ff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #3a1f87;
+  }
+  
+  /* Playlist Note looks like a sticky note */
+  #playlistNote {
+    background: #1e1a2b;
+    border: 4px solid #6f42c1;
+    border-radius: 12px;
+    box-shadow:
+      inset 0 0 15px #7540e6,
+      5px 5px 0 #32174d;
+    width: 280px;
+    padding: 1rem 1.5rem;
+    font-family: 'Press Start 2P', monospace;
+    user-select: none;
+  }
+  
+  /* Playlist header */
+  #playlistNote h3 {
+    color: #d5aaff;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 0 #3a1f87;
+  }
+  
+  /* Playlist list style */
+  #playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 2px solid #6f42c1;
+  }
+  
+  /* Playlist items */
+  #playlist li {
+    padding: 0.6rem 0.7rem;
+    border-bottom: 1px solid #4b268a;
+    color: #b2a9d6;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 0 #32174d;
+  }
+  
+  /* Highlight hovered song */
+  #playlist li:hover {
+    background: #5832a8;
+    color: #f7f1e3;
+    text-shadow: none;
+  }
+  
+  /* Highlight the currently playing song */
+  #playlist li.active {
+    background: #7540e6;
+    color: #f7f1e3;
+    font-weight: bold;
+    text-shadow: 0 0 5px #d9bfff;
+  }
+  
+  /* Pixel edges effect */
+  button, #player, #playlistNote {
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  img {
+    display: block;
+    width: 230px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (max-width: 700px) {
+    #wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
