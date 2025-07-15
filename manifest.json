@@ -1,0 +1,16 @@
+{
+    "name": "Mini MP3 Player",
+    "short_name": "MP3Player",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#12111b",
+    "theme_color": "#12111b",
+    "icons": [
+      {
+        "src": "img/moon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  

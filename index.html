@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini MP3 Player</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="manifest" href="manifest.json" />
+
+</head>
+
+<body>
+
+  <!-- I wrapped everything inside one main box so I can style them side by side  -->
+  <div id="wrapper">
+
+    <div id="player">
+      <!-- Player controls-->
+      <audio id="audioPlayer" src="" controls></audio>
+
+      <div>
+        <button id="prevBtn">Previous</button>
+        <button id="playPauseBtn">Play</button>
+        <button id="nextBtn">Next</button>
+      </div>
+
+      <img src="img/moon.png" alt="">
+
+      <!--Btn is button. The scr is empty because because I will load songs with code later-->
+      <p>Now Playing: <span id="songTitle">No song loaded</span></p>
+
+      <!--The attribute for controls is used for getting the default audio controls, play, pause, etc...If I remove it I will need to code them separately and custom them myself.-->
+      <!--placeholder text that shows when no song is playing-->
+    </div>
+
+    <!-- I moved the playlist out here to make it look like a sticky note -->
+    <div id="playlistNote">
+      <h3>My Playlist</h3>
+      <!--Playlist of songs. Unordered list, bullet points-->
+      <ul id="playlist">
+        <!--It will remain empty because I want JavaScript adding the songs dynamically.-->
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
